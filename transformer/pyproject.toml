@@ -1,0 +1,29 @@
+[project]
+name = "transformer"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "73gon",email = "malikmardan03@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy (>=2.3.3,<3.0.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "matplotlib (>=3.10.7,<4.0.0)",
+    "pytest (>=8.4.2,<9.0.0)",
+    "datasets (>=4.2.0,<5.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "transformer", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=8.4.2,<9.0.0)"
+]
