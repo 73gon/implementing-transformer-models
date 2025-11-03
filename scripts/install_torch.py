@@ -1,6 +1,14 @@
 import os, platform, subprocess, sys
 
-CUDA_URL = "https://download.pytorch.org/whl/cu124"
+CUDA_URL = "https://download.pytorch.org/whl/cu130"
+
+def has_nvidia_gpu():
+    """Check if NVIDIA GPU is available using nvidia-smi"""
+    try:
+        subprocess.check_output(["nvidia-smi"], stderr=subprocess.DEVNULL)
+        return True
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return False
 
 def main():
     # macOS automatically gets MPS-capable build from PyPI
@@ -9,19 +17,19 @@ def main():
         return
 
     # Windows or Linux: check for NVIDIA GPU
-    try:
-        import torch
-        if torch.cuda.is_available():
-            print("CUDA GPU detected → upgrading to CUDA wheel.")
-            subprocess.check_call([
-                sys.executable, "-m", "pip", "install", "--upgrade",
-                "--index-url", CUDA_URL,
-                "torch", "torchvision", "torchaudio"
-            ])
-        else:
-            print("No CUDA GPU detected → keeping CPU build.")
-    except Exception as e:
-        print("Torch not installed yet:", e)
+    if has_nvidia_gpu():
+        print("CUDA GPU detected → installing CUDA wheel.")
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install", "--upgrade", "--force-reinstall",
+            "--index-url", CUDA_URL,
+            "torch", "torchvision", "torchaudio"
+        ])
+    else:
+        print("No CUDA GPU detected → installing CPU build.")
+        subprocess.check_call([
+            sys.executable, "-m", "pip", "install", "--upgrade",
+            "torch", "torchvision", "torchaudio"
+        ])
 
 if __name__ == "__main__":
     main()
