@@ -29,7 +29,7 @@ print(tok.encode(text))
 print()
 
 tokenizer = Tokenizer(BPE())
-tokenizer.pre_tokenizer = Whitespace()
+tokenizer.pre_tokenizer = Whitespace()  # type: ignore
 
 trainer = BpeTrainer(
     vocab_size=295
