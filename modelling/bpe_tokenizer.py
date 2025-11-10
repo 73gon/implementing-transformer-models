@@ -5,21 +5,21 @@ class BPETokenizer:
         self.vocab = set()
 
     def train(self, corpus):
-        #print(f"[DEBUG] Starting BPE training with vocab_size={self.vocab_size}")
+        print(f"[DEBUG] Starting BPE training with vocab_size={self.vocab_size}")
 
         for line in corpus:
             for ch in line:
                 if ch != ' ':
                     self.vocab.add(ch)
-        #print(f"[DEBUG] Initial vocab size (characters): {len(self.vocab)}")
-        #print(f"[DEBUG] Initial vocab (characters): {self.vocab}")
+        print(f"[DEBUG] Initial vocab size (characters): {len(self.vocab)}")
+        print(f"[DEBUG] Initial vocab (characters): {self.vocab}")
 
         words_sym = []
         for line in corpus:
             for word in line.split():
                 symbols = list(word)
                 words_sym.append(symbols)
-        #print(f"[DEBUG] Total words to process: {len(words_sym)}")
+        print(f"[DEBUG] Total words to process: {len(words_sym)}")
 
         iteration = 0
         while len(self.vocab) < self.vocab_size:
@@ -31,11 +31,11 @@ class BPETokenizer:
                     pair_counts[pair] = pair_counts.get(pair, 0) + 1
 
             if not pair_counts:
-                #print(f"[DEBUG] No more pairs to merge, stopping at iteration {iteration}")
+                print(f"[DEBUG] No more pairs to merge, stopping at iteration {iteration}")
                 break
             else:
                 best_pair = max(pair_counts, key=lambda k: pair_counts[k])
-                #print(f"[DEBUG] Iteration {iteration}: Best pair='{best_pair}' with count={pair_counts[best_pair]}, vocab_size={len(self.vocab)}")
+                print(f"[DEBUG] Iteration {iteration}: Best pair='{best_pair}' with count={pair_counts[best_pair]}, vocab_size={len(self.vocab)}")
 
             new_symbols = []
             for symbols in words_sym:

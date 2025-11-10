@@ -83,7 +83,7 @@ dataset = dataset.map(lambda batch: to_cols(batch), remove_columns=["translation
 def clean_batch(batch):
     de_out, en_out = [], []
     for de, en in zip(batch["de"], batch["en"]):
-        s, t = clean_tr(de, en)  # uses your strip→whitelist→length→ratio
+        s, t = clean_tr(de, en)
         de_out.append(s)
         en_out.append(t)
     return {"de": de_out, "en": en_out}
