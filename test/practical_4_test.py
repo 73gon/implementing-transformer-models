@@ -7,7 +7,7 @@ import torch
 # Add the parent directory to the system path for importing modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from modelling.positional_encoding import PositionalEncoding
+from model.positional_encoding import PositionalEncoding
 
 # Define test data
 EMBEDDING_DIM = 16
@@ -321,9 +321,7 @@ TEST_DATA = [
 
 
 # Positional Encoding Layer Tests
-@pytest.mark.parametrize(
-    "encoding_layer, input, expected", TEST_DATA, ids=["positional_encoding"]
-)
+@pytest.mark.parametrize("encoding_layer, input, expected", TEST_DATA, ids=["positional_encoding"])
 def test_attention(encoding_layer, input, expected):
     """Test the Positional Encoding layer."""
     assert torch.allclose(encoding_layer(input), expected)

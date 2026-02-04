@@ -4,7 +4,8 @@ import sys
 import torch
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from modelling.attention import Attention
+from model.attention import Attention
+
 
 def test_attention_forward():
     torch.manual_seed(0)

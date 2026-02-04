@@ -9,7 +9,7 @@ import torch
 # Add the parent directory to the system path for importing modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from modelling.functional import TransformerDecoderLayer
+from model.functional import TransformerDecoderLayer
 
 # Define test data for hidden states and attention masks
 ENCODER = torch.tensor(
@@ -40,9 +40,7 @@ ENCODER_ATTENTION_MASK = torch.tensor([[1, 0], [1, 1]])
 # Define test data for attention outputs (feature_dim is the hidden dimension of the position wise feed forward layer)
 TEST_DATA = [
     (
-        TransformerDecoderLayer(
-            input_dim=INPUT.size(-1), num_heads=2, feature_dim=6, dropout=0.0
-        ),
+        TransformerDecoderLayer(input_dim=INPUT.size(-1), num_heads=2, feature_dim=6, dropout=0.0),
         INPUT,
         ENCODER,
         ATTENTION_MASK,
@@ -165,9 +163,7 @@ STATE_DICT = {
             [-0.9825, -1.1156, -1.0796, -2.3653],
         ]
     ),
-    "feature_transformation.linear1.bias": torch.tensor(
-        [-0.6578, 0.0737, -1.1023, 1.0154, -0.0636, 0.6766]
-    ),
+    "feature_transformation.linear1.bias": torch.tensor([-0.6578, 0.0737, -1.1023, 1.0154, -0.0636, 0.6766]),
     "feature_transformation.linear2.weight": torch.tensor(
         [
             [-0.1321, -0.8338, 1.9037, 1.3632, -0.5201, -0.1429],
@@ -176,9 +172,7 @@ STATE_DICT = {
             [0.2121, -0.2146, 1.7223, 0.5707, -0.2097, 0.5553],
         ]
     ),
-    "feature_transformation.linear2.bias": torch.tensor(
-        [0.2078, 0.2490, 0.0818, -0.0595]
-    ),
+    "feature_transformation.linear2.bias": torch.tensor([0.2078, 0.2490, 0.0818, -0.0595]),
     "layer_norm_1.weight": torch.tensor([1.0, 1.0, 1.0, 1.0]),
     "layer_norm_1.bias": torch.tensor([0.0, 0.0, 0.0, 0.0]),
     "layer_norm_2.weight": torch.tensor([1.1, 1.1, 1.1, 1.1]),

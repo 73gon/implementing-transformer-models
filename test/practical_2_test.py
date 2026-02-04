@@ -8,7 +8,7 @@ import torch
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Specify the pat to import your attention mechanism
-from modelling.attention import Attention
+from model.attention import Attention
 
 # Define test data for hidden states and attention masks
 VALUE = torch.tensor(
@@ -199,6 +199,4 @@ ATTENTION_TEST_DATA = [
 )
 def test_attention(attention_layer, query, value, attention_mask, expected):
     """Test the Attention layer."""
-    assert torch.allclose(
-        attention_layer(query, value, value, attention_mask), expected
-    )
+    assert torch.allclose(attention_layer(query, value, value, attention_mask), expected)
