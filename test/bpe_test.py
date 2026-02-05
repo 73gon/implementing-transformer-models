@@ -8,7 +8,7 @@ from tokenizers.pre_tokenizers import Whitespace
 from tokenizers.trainers import BpeTrainer
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from model.bpe_tokenizer import BPETokenizer
+from tokenizer.bpe_tokenizer import BPETokenizer
 
 corpus = [
     "Machine learning helps in understanding complex patterns.",

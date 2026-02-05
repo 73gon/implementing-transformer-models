@@ -1,0 +1,261 @@
+EVALUATION RESULTS
+================================================================================
+
+Test samples: 500
+BLEU Score: 12.67
+Precisions: [0.43737434660233215, 0.17453429297205758, 0.0834823424228878, 0.040482954545454544]
+Brevity Penalty: 1.0000
+
+SAMPLE TRANSLATIONS
+--------------------------------------------------------------------------------
+
+Sample 1:
+  Source (DE):     28-jähriger Koch in San Francisco Mall tot aufgefunden
+  Reference (EN):  28-Year-Old Chef Found Dead at San Francisco Mall
+  Prediction (EN): 28-year bone in san francisco mallall
+
+Sample 2:
+  Source (DE):     Ein 28-jähriger Koch, der vor kurzem nach San Francisco gezogen ist, wurde im Treppenhaus eines örtlichen Einkaufzentrums tot aufgefunden.
+  Reference (EN):  A 28-year-old chef who had recently moved to San Francisco was found dead in the stairwell of a local mall this week.
+  Prediction (EN): a 28-year bone which was recently withdrawn after san francisco was found in the house of a local buyer dead.
+
+Sample 3:
+  Source (DE):     Der Bruder des Opfers sagte aus, dass er sich niemanden vorstellen kann, der ihm schaden wollen würde, Endlich ging es bei ihm wieder bergauf.
+  Reference (EN):  But the victims brother says he cant think of anyone who would want to hurt him, saying, Things were finally going well for him.
+  Prediction (EN): the victim said that he could not imagine anyone who would damage him at last was in his repeat of his mountain.
+
+Sample 4:
+  Source (DE):     Der am Mittwoch morgen in der Westfield Mall gefundene Leichnam wurde als der 28 Jahre alte Frank Galicia aus San Francisco identifiziert, teilte die gerichtsmedizinische Abteilung in San Francisco mit.
+  Reference (EN):  The body found at the Westfield Mall Wednesday morning was identified as 28-year-old San Francisco resident Frank Galicia, the San Francisco Medical Examiners Office said.
+  Prediction (EN): the mallnam found tomorrow at the westfield field was identified as the 28 years old frank galicia from san francisco, was involved in the judicial division in san francisco.
+
+Sample 5:
+  Source (DE):     Das San Francisco Police Department sagte, dass der Tod als Mord eingestuft wurde und die Ermittlungen am Laufen sind.
+  Reference (EN):  The San Francisco Police Department said the death was ruled a homicide and an investigation is ongoing.
+  Prediction (EN): the san francisco police department said that the death was set as a murder and that investigations have been undergone.
+
+Sample 6:
+  Source (DE):     Der Bruder des Opfers, Louis Galicia, teilte dem ABS Sender KGO in San Francisco mit, dass Frank, der früher als Koch in Boston gearbeitet hat, vor sechs Monaten seinen Traumjob als Koch im Sons & Daughters Restaurant in San Francisco ergattert hatte.
+  Reference (EN):  The victims brother, Louis Galicia, told ABC station KGO in San Francisco that Frank, previously a line cook in Boston, had landed his dream job as line chef at San Franciscos Sons & Daughters restaurant six months ago.
+  Prediction (EN): the victim, louis galicia, shared the absence of the kgo in san cisco with the french working for the past in boston, which was six months ago in border restaurant in the south cons and daughter of the restaurant in
+
+Sample 7:
+  Source (DE):     Ein Sprecher des Sons & Daughters sagte, dass sie über seinen Tod schockiert und am Boden zerstört seien.
+  Reference (EN):  A spokesperson for Sons & Daughters said they were shocked and devastated by his death.
+  Prediction (EN): a spokesman of cons &d da account said that she shocked his death and destroyed the soil.
+
+Sample 8:
+  Source (DE):     Wir sind ein kleines Team, das wie eine enge Familie arbeitet und wir werden ihn schmerzlich vermissen, sagte der Sprecher weiter.
+  Reference (EN):  We are a small team that operates like a close knit family and he will be dearly missed, the spokesperson said.
+  Prediction (EN): we are a small team which works like a close family and we will painfully miss it, said that the spokesperson continues.
+
+Sample 9:
+  Source (DE):     Unsere Gedanken und unser Beileid sind in dieser schweren Zeit bei Franks Familie und Freunden.
+  Reference (EN):  Our thoughts and condolences are with Franks family and friends at this difficult time.
+  Prediction (EN): our ideas and our condolences are friends in this difficult time in france.
+
+Sample 10:
+  Source (DE):     Louis Galicia gab an, dass Frank zunächst in Hostels lebte, aber dass, die Dinge für ihn endlich bergauf gingen.
+  Reference (EN):  Louis Galicia said Frank initially stayed in hostels, but recently, Things were finally going well for him.
+  Prediction (EN): louis galicia said that france was first living in hostels, but that things were finally at last mining for it.
+
+Sample 11:
+  Source (DE):     Er fand eine Wohnung, er hatte eine Freundin, teilte Louis Garcia KGO mit.
+  Reference (EN):  He found an apartment, he was dating a girl, Louis Galicia told KGO.
+  Prediction (EN): he was a housing, he had a friend, louis garcia kgo.
+
+Sample 12:
+  Source (DE):     Louis Galicia sagte, dass er sich niemanden vorstellen könne, der seinem jüngeren Bruder schaden wollen würde.
+  Reference (EN):  Louis Galicia said he could not think of anyone who would want to hurt his younger brother.
+  Prediction (EN): louis galicia said that he could not imagine anyone who would harm his recent brother.
+
+Sample 13:
+  Source (DE):     Er war ein freundlicher Mensch mit einem großen Herzen.
+  Reference (EN):  He was a kind spirit with a big heart.
+  Prediction (EN): he was a friendly hearing with a great heart.
+
+Sample 14:
+  Source (DE):     Seine Art mit seiner Familie zu verbinden war es, uns immer etwas zu kochen, uns das Abendessen zuzubereiten, sagte Louis Galicia.
+  Reference (EN):  His way of connecting with the family was always making us a dish, making us dinner, Louis Galicia said.
+  Prediction (EN): his sort of family was linked to us always to bone the evening to galicia said louis galicia.
+
+Sample 15:
+  Source (DE):     Er wollte nie an irgendeiner Art von Auseinandersetzung teilnehmen.
+  Reference (EN):  He never wanted to be in any kind of altercation.
+  Prediction (EN): he never wanted to take part in any kind of debate.
+
+Sample 16:
+  Source (DE):     Er war der Bruder, der mit dem Strom schwamm.
+  Reference (EN):  He was the brother that went with the flow.
+  Prediction (EN): he was the brother who was watching the electricity swift.
+
+Sample 17:
+  Source (DE):     Bei allem, was in der Welt schief läuft, war er dieser ungeschliffene Diamant, der jeden Tag hell leuchtete, sagte er.
+  Reference (EN):  With everything else thats going wrong with the world, he was that diamond in the rough that was shining bright every day, he said.
+  Prediction (EN): in all instances of what is going on in the world, he was the diamant who was experiencing every day.
+
+Sample 18:
+  Source (DE):     Jeder, der Informationen zu dem Fall hat, wird gebeten das Hinweistelefon des SFPD unter der Nummer 415-575-4444 anzurufen.
+  Reference (EN):  Anyone with information is asked to call the SFPD Tip Line at 415-575-4444.
+  Prediction (EN): anyone who has information on the case will be asked to call for the reference telephone of the sfpd to be called 415-575 4444.
+
+Sample 19:
+  Source (DE):     Jennifer Aniston: Ich werde immer in Schubladen gesteckt
+  Reference (EN):  Jennifer Aniston: Im always pigeonholed
+  Prediction (EN): jenner angelon: i always have been covered in schubladen
+
+Sample 20:
+  Source (DE):     Jennifer Aniston muss nicht immer perfekt oder erfolgreich sein.
+  Reference (EN):  Jennifer Aniston need not always be perfect or successful.
+  Prediction (EN): jiferan is not always perfect or successful.
+
+Sample 21:
+  Source (DE):     Das hat der Hollywood-Star in einem Interview jetzt unmissverständlich klar gemacht.
+  Reference (EN):  That is what the Hollywood star has made abundantly clear in an interview.
+  Prediction (EN): this has now made it clear in an interview clearly unambiguously.
+
+Sample 22:
+  Source (DE):     Ich werde immer in Schubladen gesteckt oder bekomme von außen Label aufgeklebt, die mit mir und der Realität meist wenig zu tun haben.
+  Reference (EN):  Im always pigeonholed, or labelled by someone who has little, if anything, to do with me and reality.
+  Prediction (EN): i always have been covered by shoes or been lived by outside label which i and the reality are not something that i have to do.
+
+Sample 23:
+  Source (DE):     Ich selbst habe nicht den Wunsch, immer perfekt und erfolgreich zu sein.
+  Reference (EN):  Personally, I have no desire to be perfect and successful all the time.
+  Prediction (EN): i myself do not want to be perfect and successful.
+
+Sample 24:
+  Source (DE):     Ehrlich gesagt, sind mir diese Dinge eher schnuppe.
+  Reference (EN):  To be honest, I dont really give a damn about things like that.
+  Prediction (EN): to be frank, these things are rather accidents.
+
+Sample 25:
+  Source (DE):     Jennifer Aniston (47) kann nur darüber lachen, dass sie als Miss Perfect gilt, wie sie in der aktuellen Cosmopolitan erklärt.
+  Reference (EN):  Jennifer Aniston (47) can only laugh that she has been dubbed Miss Perfect in the current issue of Cosmopolitan.
+  Prediction (EN): jennifer anon is only a matter of declaring that they are a missing fect as they are stating in the current cosmopolitan.
+
+Sample 26:
+  Source (DE):     Am liebsten verbringt die Schauspielerin nämlich ihre Zeit zuhause, vorm Fernseher mit lockerem Dutt und mexikanischem Essen, heißt es in dem Magazin.
+  Reference (EN):  The actress prefers to spend her time at home in front of the television with her hair in a relaxed bun, eating Mexican food, the magazine reports.
+  Prediction (EN): the fact is that the player is buying her time at home, television with relaxing duty and mexican mexican, says it in the magazine.
+
+Sample 27:
+  Source (DE):     Zur Weißglut bringe sie die Frage nach dem Kinderwunsch: Wir Frauen müssen nicht verheiratet sein oder Kinder haben, um vollkommen zu sein, so der Hollywood-Star.
+  Reference (EN):  The question of whether she wants children makes her livid: We women do not need to be married or have children to feel fulfilled, the Hollywood star says.
+  Prediction (EN): on the white paper, you refuse to ask the question of children: we must not be married or children to be complete, so that the hollywood star can be complete.
+
+Sample 28:
+  Source (DE):     In ihrem neuen Film Mothers Day - Liebe ist kein Kinderspiel ist Aniston als eine alleinerziehende Mutter zweier Söhne zu sehen.
+  Reference (EN):  In her new film, Mothers Day - love isnt childs play, Aniston stars as a single mother with two sons.
+  Prediction (EN): in your new film mothers day, there is no child game is a mother of mothers who are with a mother of two sons.
+
+Sample 29:
+  Source (DE):     Der Film läuft bei uns ab dem 25. August.
+  Reference (EN):  The film is released in Germany on 25 August.
+  Prediction (EN): the film is at our disposal from 25 august.
+
+Sample 30:
+  Source (DE):     Golfer Langer erhält die Sportpyramide
+  Reference (EN):  Golfer Langer is awarded the Sport Pyramid
+  Prediction (EN): golferfer is receiving sport pyramid
+
+Sample 31:
+  Source (DE):     Seine Erfahrungen auf dem Pferd sind überschaubar.
+  Reference (EN):  His experience on horseback is negligible.
+  Prediction (EN): its experience on the vaccination is overlooked.
+
+Sample 32:
+  Source (DE):     Am Ende eines Golfturniers in Südafrika suchte Bernhard Langer mit einigen Kollegen ein bisschen Abwechslung mit einem Ausritt am Strand.
+  Reference (EN):  At the end of a golfing tournament in South Africa, Bernhard Langer and a colleague went for a ride along the beach for a bit of fun.
+  Prediction (EN): at the end of a golbox in south africa, mr lange, some colleagues have been seeking a long time ago to see a bit of dead with a move from the street.
+
+Sample 33:
+  Source (DE):     Für den 58-Jährigen war es eine Premiere.
+  Reference (EN):  It was a first for the 58-year-old.
+  Prediction (EN): it was a price for the 58-year period.
+
+Sample 34:
+  Source (DE):     CHIO: Goldene Sportpyramide für Bernhard Langer
+  Reference (EN):  CHIO: Golden Sport Pyramid for Bernhard Langer
+  Prediction (EN): chio: golden sport pyramid for berhard long
+
+Sample 35:
+  Source (DE):     Nach einigen Minuten erinnerten sich die Pferde an ihren Feierabend, sie jagten im schnellen Galopp nach Hause zu den Futtertrögen.
+  Reference (EN):  After a few minutes, the horse decided it wanted to go home, and raced back to its feeding trough at full tilt.
+  Prediction (EN): after a few minutes, the villages were remembered at their feet evening, they said home in the rapid galopp home.
+
+Sample 36:
+  Source (DE):     Ein Kilometer bei diesem Tempo, ich habe Angst gehabt.
+  Reference (EN):  After a kilometre at this speed I was scared.
+  Prediction (EN): a kilometre on this tempo, i have had fear of this.
+
+Sample 37:
+  Source (DE):     Es war kein gutes Erlebnis, sagt Langer.
+  Reference (EN):  It wasnt a good experience, said Langer.
+  Prediction (EN): it was not a good experience, said long.
+
+Sample 38:
+  Source (DE):     Und damit endete die Reitkarriere dann auch schon wieder.
+  Reference (EN):  And with that, his riding career came to an end again.
+  Prediction (EN): this was the carriage of the dispute then again.
+
+Sample 39:
+  Source (DE):     Am Samstag war Deutschlands bester Golfer aller Zeiten - 101 Turniersiege - wieder in der Nähe von Pferden.
+  Reference (EN):  On Saturday, Germanys best golfer of all time - with 101 tournament wins under his belt - was once again near horses.
+  Prediction (EN): on saturday germany was the best golf of all the times - 101 turn back - again near pferels.
+
+Sample 40:
+  Source (DE):     Er ließ sich mit seiner Familie über die Anlage des ALRV führen, auf ein Pferd schwang er sich nicht mal zu Fotozwecken.
+  Reference (EN):  He and his family toured the ALRV grounds, but he did not jump onto a horse for a photo.
+  Prediction (EN): it was with its family on the annex of alrvrv, with a village of pregnant women even too footprint.
+
+Sample 41:
+  Source (DE):     Langer war das erste Mal in Aachen und damit auch beim CHIO.
+  Reference (EN):  It was Langers first time in Aachen, and at CHIO.
+  Prediction (EN): this was the first time in a matter of long term, and therefore in chio.
+
+Sample 42:
+  Source (DE):     Der Grund war durchaus überzeugend.
+  Reference (EN):  He had been thoroughly convinced.
+  Prediction (EN): the reason was very convincing.
+
+Sample 43:
+  Source (DE):     Die deutsche Sporthilfe überreichte dem Mann aus Anhausen im Rahmen einer kleinen Gala die Goldene Sportpyramide.
+  Reference (EN):  The German Sport Aid foundation awarded the man from Anhausen with the Golden Sport Pyramid at a small gala event.
+  Prediction (EN): the german sporting aid has been sent to the man from an people who are holding a small gala that is sport pyramid.
+
+Sample 44:
+  Source (DE):     An Auszeichnungen mangelt es dem sympathischen Sportler nicht.
+  Reference (EN):  The friendly sportsman is not lacking for awards.
+  Prediction (EN): there is no lack of sympathy for sportsmen.
+
+Sample 45:
+  Source (DE):     Selbst die britische Queen hat ihn schon geadelt.
+  Reference (EN):  Even the British Queen has bestowed an honour upon him.
+  Prediction (EN): even the british queen has already addressed him.
+
+Sample 46:
+  Source (DE):     Langer ist der 18. Preisträger der Sportpyramide.
+  Reference (EN):  Langer is the 18th person to be awarded the Sport Pyramid.
+  Prediction (EN): long is the 18th prize winner of sport pyramid.
+
+Sample 47:
+  Source (DE):     In Aachen traf er am Samstag den ersten Preisträger Hans Günter Winkler.
+  Reference (EN):  On Saturday, he met the first person to receive it, Hans Günter Winkler, in Aachen.
+  Prediction (EN): in a saturday he was facing the first hans hans gnter winkler.
+
+Sample 48:
+  Source (DE):     Diese Auszeichnung bedeutet mir sehr viel, sagt Langer, denn sie wird nicht nur für sportliche Erfolge, sondern auch für gesellschaftliches Engagement vergeben.
+  Reference (EN):  This award means a lot to me, said Langer, because its not just given for sporting success, but also for social commitment.
+  Prediction (EN): this excellent exception means a lot of time, said long, because it will not only be given to sporting successes, but also to social commitment.
+
+Sample 49:
+  Source (DE):     Seit Jahrzehnten fördert Langer den Nachwuchs.
+  Reference (EN):  Langer has been encouraging up-and-coming talent for years.
+  Prediction (EN): for decades, the long time has been promoting the supply of the building.
+
+Sample 50:
+  Source (DE):     Und so gab er auch das Preisgeld von 25.000 Euro gleich weiter.
+  Reference (EN):  And in this vein, he passed the prize money of 25,000 euros on straight away.
+  Prediction (EN): and that is the price money of eur 25 000.
+

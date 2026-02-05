@@ -1,10 +1,10 @@
-from transformers import GPT2TokenizerFast
-from modelling.dataset_translation import TranslationDataset, collate_translation
-from modelling.data_cleaning import cleaned_ds
-
 from torch.utils.data import DataLoader
+from transformers import GPT2TokenizerFast
 
-SPECIALS = {"pad_token":"[PAD]","unk_token":"[UNK]","bos_token":"[BOS]","eos_token":"[EOS]"}
+from data.data_cleaning import cleaned_ds
+from data.dataset_translation import TranslationDataset, collate_translation
+
+SPECIALS = {"pad_token": "[PAD]", "unk_token": "[UNK]", "bos_token": "[BOS]", "eos_token": "[EOS]"}
 
 # 1. Tokenizer laden
 tok = GPT2TokenizerFast.from_pretrained("bpe_tok_gpt2", padding_side="right")
@@ -27,23 +27,22 @@ for k, v in batch.items():
     print(k, v.shape)
 
 # --- Test: Positional Encoding auf einen Batch anwenden ---
-from modelling.positional_encoding import PositionalEncoding
 import torch.nn as nn
+
+from model.positional_encoding import PositionalEncoding
 
 d_model = 128
 emb = nn.Embedding(tok.vocab_size, d_model, padding_idx=pad_id)
-pe  = PositionalEncoding(d_model)
+pe = PositionalEncoding(d_model)
 
-enc_in = pe(emb(batch["src_ids"]))   # (B, Ls, d_model)
+enc_in = pe(emb(batch["src_ids"]))  # (B, Ls, d_model)
 
 print("PE-Test OK, Shape:", enc_in.shape)
 
-from modelling.embeddings import TokenEmbedding
+from model.embeddings import TokenEmbedding
 
 d_model = 128
 emb = TokenEmbedding(tok.vocab_size, d_model, pad_id)
 
 emb_out = emb(batch["src_ids"])  # (B, L, d_model)
 print("Embedding-Test OK, Shape:", emb_out.shape)
-
-
