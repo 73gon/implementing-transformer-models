@@ -44,7 +44,6 @@ def load_data(csv_path: str) -> pd.DataFrame:
 
     # Check if CSV has headers - if not, add them
     if "timestamp" not in df.columns:
-        # Old format without headers - add column names
         column_names = [
             "timestamp",
             "device",
@@ -97,7 +96,6 @@ def aggregate_repeats(df: pd.DataFrame) -> pd.DataFrame:
         .reset_index()
     )
 
-    # Also compute std for error bars
     std_df = (
         df.groupby(["device", "seq_len", "batch_size"])
         .agg(
@@ -111,7 +109,7 @@ def aggregate_repeats(df: pd.DataFrame) -> pd.DataFrame:
     std_df.columns = ["device", "seq_len", "batch_size", "mean_step_ms_std", "tokens_per_sec_std"]
 
     agg_df = agg_df.merge(std_df, on=["device", "seq_len", "batch_size"])
-    agg_df = agg_df.fillna(0)  # Fill NaN std (single repeat) with 0
+    agg_df = agg_df.fillna(0)
 
     return agg_df
 

@@ -29,7 +29,7 @@ from train import create_transformer_model
 # Configuration
 WARMUP_STEPS = 10
 TIMED_STEPS = 50
-DATASET_SIZE = 5000  # Subset for faster loading
+DATASET_SIZE = 5000
 
 # Model hyperparameters
 D_MODEL = 256

@@ -13,7 +13,6 @@ from model.lr_scheduler import TransformerLRScheduler
 from model.model import Transformer
 from model.optimiser import create_optimizer_with_weight_decay
 
-# Set up logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
@@ -52,7 +51,7 @@ class TransformerTrainer:
 
         # Loss function with label smoothing
         self.loss_fn = nn.CrossEntropyLoss(
-            ignore_index=-100,  # Ignore padding tokens
+            ignore_index=-100,
             label_smoothing=0.1,
             reduction="mean",
         )
@@ -357,7 +356,6 @@ if __name__ == "__main__":
     DROPOUT = 0.1
     MAX_LEN = 128
 
-    # Device
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logger.info(f"Using device: {device}\n")
 

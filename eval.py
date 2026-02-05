@@ -147,7 +147,6 @@ class TranslationGenerator:
             return ""
 
         # Use tokenizer's decode which properly merges BPE tokens
-        # clean_up_tokenization_spaces=True handles GPT2's Ġ (space) markers
         text = self.tokenizer.decode(
             token_ids,
             skip_special_tokens=True,
@@ -293,7 +292,7 @@ def load_model_from_checkpoint(
     num_encoder_layers: int = 4,
     num_decoder_layers: int = 4,
     dim_feedforward: int = 1024,
-    dropout: float = 0.0,  # No dropout during inference
+    dropout: float = 0.0,
     max_len: int = 128,
     pad_id: int = 0,
     device: torch.device = None,
@@ -334,7 +333,7 @@ def main():
     """
     # Configuration
     CHECKPOINT_PATH = "./checkpoints/best_model.pt"
-    TEST_SUBSET_SIZE = 500  # Evaluate on subset for speed
+    TEST_SUBSET_SIZE = 500
     NUM_ANALYSIS_SAMPLES = 10
 
     # Device
@@ -359,7 +358,7 @@ def main():
         num_encoder_layers=4,
         num_decoder_layers=4,
         dim_feedforward=1024,
-        dropout=0.0,  # No dropout during evaluation
+        dropout=0.0,
         max_len=128,
         pad_id=pad_id,
         device=device,

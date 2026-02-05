@@ -14,7 +14,7 @@ class TranslationDataset(Dataset):
 
     def __init__(
         self,
-        hf_split,  # e.g., cleaned_ds["train"]
+        hf_split,
         tokenizer: PreTrainedTokenizerBase,
         max_len: int = 128,
     ):
@@ -76,7 +76,6 @@ def collate_translation(batch: List[Dict[str, torch.Tensor]], pad_id: int):
     tgt_in, tgt_mask = _pad(tgt_in, pad_id)
     tgt_out, _ = _pad(tgt_out, pad_id)
 
-    # Labels should ignore padding in the loss
     labels = tgt_out.masked_fill(tgt_mask == 0, -100)
 
     return {

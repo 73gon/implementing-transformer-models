@@ -1,7 +1,9 @@
+import math
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import math
+
 
 class Attention(nn.Module):
     def __init__(self, mask_future=False):
@@ -28,17 +30,15 @@ class Attention(nn.Module):
         output = torch.matmul(attn_weights, v)
         return output
 
+
 class PositionWiseFeedForward(nn.Module):
     def __init__(self, d_model: int, d_ff: int):
         super().__init__()
-        self.ffn = nn.Sequential(
-            nn.Linear(d_model, d_ff),
-            nn.ReLU(),
-            nn.Linear(d_ff, d_model)
-        )
+        self.ffn = nn.Sequential(nn.Linear(d_model, d_ff), nn.ReLU(), nn.Linear(d_ff, d_model))
 
     def forward(self, x):
         return self.ffn(x)
+
 
 class MultiHeadAttention(nn.Module):
     def __init__(self, d_model: int, num_heads: int, mask_future: bool = False, dropout: float = 0.1):
@@ -49,7 +49,6 @@ class MultiHeadAttention(nn.Module):
         self.num_heads = num_heads
         self.head_dim = d_model // num_heads
 
-        # names must match the test's state_dict
         self.query_transform = nn.Linear(d_model, d_model, bias=False)
         self.key_transform = nn.Linear(d_model, d_model, bias=False)
         self.value_transform = nn.Linear(d_model, d_model, bias=False)
@@ -64,7 +63,7 @@ class MultiHeadAttention(nn.Module):
 
         # 1) Linear projections
         Q = self.query_transform(q)  # (B, q_len, d_model)
-        K = self.key_transform(k)    # (B, k_len, d_model)
+        K = self.key_transform(k)  # (B, k_len, d_model)
         V = self.value_transform(v)  # (B, k_len, d_model)
 
         # 2) Split into heads: (B, num_heads, seq, head_dim)

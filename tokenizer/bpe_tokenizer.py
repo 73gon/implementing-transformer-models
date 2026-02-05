@@ -14,7 +14,7 @@ class BPETokenizer:
         """
         print(f"[DEBUG] Starting BPE training with vocab_size={self.vocab_size}")
 
-        # Initialize vocab with characters AND special space marker (Ġ)
+        # Initialize vocab with characters and special space marker (Ġ)
         for line in corpus:
             for ch in line:
                 if ch != " ":
@@ -88,7 +88,6 @@ class BPETokenizer:
 
         print(f"[DEBUG] Converted {len(tokenized_corpus)} texts to space-marked format")
 
-        # Now train using the regular train method on the converted corpus
         self.train(tokenized_corpus)
 
     def encode(self, text):

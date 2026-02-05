@@ -1,6 +1,8 @@
 import math
+
 import torch
 import torch.nn as nn
+
 
 class PositionalEncoding(nn.Module):
     def __init__(self, d_model: int, max_len: int = 10000, dropout: float = 0.0):
@@ -10,11 +12,11 @@ class PositionalEncoding(nn.Module):
         div = torch.exp(torch.arange(0, d_model, 2).float() * (-math.log(10000.0) / d_model))
         pe[:, 0::2] = torch.sin(pos * div)
         pe[:, 1::2] = torch.cos(pos * div)
-        self.register_buffer("pe", pe)   # kein Parameter
+        self.register_buffer("pe", pe)
         self.dropout = nn.Dropout(dropout)
-        self.scale = math.sqrt(d_model)  # wie im Transformer
+        self.scale = math.sqrt(d_model)
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
         # x: (B, L, d_model)
         L = x.size(1)
-        return self.dropout(x * self.scale + self.pe[:L].unsqueeze(0)) #type:ignore
+        return self.dropout(x * self.scale + self.pe[:L].unsqueeze(0))  # type:ignore

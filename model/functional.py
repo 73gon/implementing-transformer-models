@@ -12,6 +12,7 @@ class FeatureTransformation(nn.Module):
     Names (linear1, linear2) are chosen to match the test STATE_DICT keys:
     'feature_transformation.linear1.*' and 'feature_transformation.linear2.*'
     """
+
     def __init__(self, input_dim: int, feature_dim: int):
         super().__init__()
         self.linear1 = nn.Linear(input_dim, feature_dim)
@@ -23,6 +24,7 @@ class FeatureTransformation(nn.Module):
         x = F.relu(x)
         x = self.linear2(x)
         return x
+
 
 class BaseTransformerLayer(nn.Module):
     """
@@ -49,12 +51,8 @@ class BaseTransformerLayer(nn.Module):
             dropout=dropout,
         )
 
-        self.feature_transformation = FeatureTransformation(
-            input_dim=input_dim,
-            feature_dim=feature_dim
-        )
+        self.feature_transformation = FeatureTransformation(input_dim=input_dim, feature_dim=feature_dim)
 
-        # Two independent layer norms – names must match STATE_DICT
         self.layer_norm_1 = nn.LayerNorm(input_dim)
         self.layer_norm_2 = nn.LayerNorm(input_dim)
 
@@ -74,6 +72,7 @@ class BaseTransformerLayer(nn.Module):
         x = self.layer_norm_2(x + self.dropout(ffn_out))
 
         return x
+
 
 class TransformerDecoderLayer(nn.Module):
     """
@@ -104,7 +103,6 @@ class TransformerDecoderLayer(nn.Module):
         )
 
         # Encoder–decoder cross attention
-        # NOTE: name must be exactly "encoder_attention"
         self.encoder_attention = MultiHeadAttention(
             d_model=input_dim,
             num_heads=num_heads,

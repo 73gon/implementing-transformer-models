@@ -32,15 +32,18 @@ def create_optimizer_with_weight_decay(
             # Parameters to exclude from weight decay:
             # - bias parameters
             # - layer norm parameters (weight and bias)
-            if 'bias' in name or 'layer_norm' in name or 'LayerNorm' in name:
+            if "bias" in name or "layer_norm" in name or "LayerNorm" in name:
                 params_without_decay.append(param)
             else:
                 params_with_decay.append(param)
 
     # Create optimizer with parameter groups
-    optimizer = AdamW([
-        {'params': params_with_decay, 'weight_decay': weight_decay},
-        {'params': params_without_decay, 'weight_decay': 0.0},
-    ], lr=learning_rate)
+    optimizer = AdamW(
+        [
+            {"params": params_with_decay, "weight_decay": weight_decay},
+            {"params": params_without_decay, "weight_decay": 0.0},
+        ],
+        lr=learning_rate,
+    )
 
     return optimizer

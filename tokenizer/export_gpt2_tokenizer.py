@@ -1,4 +1,3 @@
-# export_gpt2_tokenizer.py
 import json
 import sys
 from pathlib import Path
@@ -15,12 +14,10 @@ SPECIALS = {
 
 ROOT_DIR = Path(__file__).parent.parent
 
-# Add root directory to Python path so we can import from root-level modules
 sys.path.insert(0, str(ROOT_DIR))
 
 
 def save_gpt2_tokenizer(bpe, out_dir="bpe_tok_gpt2"):
-    # Use root directory for tokenizer
     out = ROOT_DIR / out_dir
     out.mkdir(parents=True, exist_ok=True)
     vocab = {tok: i for i, tok in enumerate(bpe.vocab)}
@@ -60,14 +57,14 @@ def save_gpt2_tokenizer(bpe, out_dir="bpe_tok_gpt2"):
 
 
 if __name__ == "__main__":
-    # load cleaned dataset (assuming you already saved it or have it in memory)
+    # load cleaned dataset
     from data.data_cleaning import cleaned_ds
 
     # Use more data for better BPE merges
     corpus = []
 
     # Use more training data for better tokenizer
-    max_samples = 5000  # Increased from 500
+    max_samples = 5000
     for split in ["train"]:  # Focus on training split
         corpus.extend(cleaned_ds[split]["de"][:max_samples])  # type: ignore
         corpus.extend(cleaned_ds[split]["en"][:max_samples])  # type: ignore

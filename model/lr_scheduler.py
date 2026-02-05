@@ -31,7 +31,7 @@ class TransformerLRScheduler:
         self.current_step += 1
         lr = self.get_lr()
         for param_group in self.optimizer.param_groups:
-            param_group['lr'] = lr
+            param_group["lr"] = lr
 
     def get_lr(self) -> float:
         """

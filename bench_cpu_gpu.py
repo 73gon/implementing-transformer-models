@@ -1,5 +1,5 @@
 """
-CPU/GPU Benchmark Runner v2 - Subprocess-based
+CPU/GPU Benchmark Runner - Subprocess-based
 
 Runs each benchmark configuration in a separate subprocess for:
 - Fresh GPU memory state for each config
@@ -7,7 +7,7 @@ Runs each benchmark configuration in a separate subprocess for:
 - Better isolation and stability
 
 Usage:
-    python bench_cpu_gpu_v2.py [--cpu-only] [--cuda-only] [--timeout 600]
+    python bench_cpu_gpu.py [--cpu-only] [--cuda-only] [--timeout 600]
 """
 
 import argparse
@@ -99,7 +99,6 @@ def run_single_benchmark(device, seq_len, batch_size, repeat, output_file, timeo
 def main():
     args = parse_args()
 
-    # Ensure output directory exists
     OUTPUT_DIR.mkdir(exist_ok=True)
 
     # Determine devices

@@ -181,7 +181,7 @@ class Transformer(nn.Module):
 
     def _init_weights(self):
         """Initialize weights following best practices for transformers."""
-        init_std = 0.02  # Standard for transformer models
+        init_std = 0.02
 
         for module in self.modules():
             if isinstance(module, nn.Linear):
