@@ -41,12 +41,28 @@ def load_data(csv_path: str) -> pd.DataFrame:
         sys.exit(1)
 
     df = pd.read_csv(csv_path)
+    
+    # Check if CSV has headers - if not, add them
+    if 'timestamp' not in df.columns:
+        # Old format without headers - add column names
+        column_names = [
+            'timestamp', 'device', 'precision', 'seq_len', 'batch_size',
+            'warmup_steps', 'timed_steps', 'repeat', 'mean_step_ms', 'p50_step_ms',
+            'p90_step_ms', 'tokens_per_sec', 'peak_mem_mb', 'final_loss', 'status', 'notes'
+        ]
+        df.columns = column_names[:len(df.columns)]
 
-    # Filter only successful runs
-    df = df[df["status"] == "success"].copy()
+    # Filter only successful runs (if status column exists)
+    if 'status' in df.columns:
+        df = df[df["status"] == "success"].copy()
+    
+    # Ensure numeric columns
+    for col in ['seq_len', 'batch_size', 'mean_step_ms', 'tokens_per_sec', 'peak_mem_mb']:
+        if col in df.columns:
+            df[col] = pd.to_numeric(df[col], errors='coerce')
 
     if len(df) == 0:
-        print("Error: No successful benchmark runs found in CSV.")
+        print("Error: No benchmark data found in CSV.")
         sys.exit(1)
 
     return df
